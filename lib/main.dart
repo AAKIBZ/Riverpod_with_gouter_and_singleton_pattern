@@ -12,6 +12,7 @@ void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
+///usage of GoRouter Here
 final GoRouter _router = GoRouter(initialLocation: '/', routes: [
   GoRoute(path: '/', builder: (context, state) => const HomePage()),
   GoRoute(
