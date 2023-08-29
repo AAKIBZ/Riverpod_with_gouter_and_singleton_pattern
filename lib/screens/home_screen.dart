@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:riverpod_example/provider/home_provider.dart';
 import 'package:riverpod_example/service/service.dart';
-import 'package:go_router/go_router.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -25,7 +25,8 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final processing = ref.watch(homeProvider).processing;
+    final processing =
+        ref.watch(homeProvider.select((value) => value.processing));
     List data = ref.watch(homeProvider).data;
 
     return Scaffold(
