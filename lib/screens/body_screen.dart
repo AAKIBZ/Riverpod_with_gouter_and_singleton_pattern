@@ -22,12 +22,12 @@ class _BodyClassState extends ConsumerState<BodyClass> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('extra :: ${widget.body['body']}');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Body Screen'),
       ),
-      body: const Center(child: Text('second screen')),
+      body:  Padding(padding: const EdgeInsets.all(16.0),
+      child: Text('Passed Data is : \n ${widget.body['body']}')),
     );
   }
 }
